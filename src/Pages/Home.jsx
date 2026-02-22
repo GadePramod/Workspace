@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { WORKSPACES } from '../constants';
-import WorkspaceCard from '../components/Workspacecard';
+import WorkspaceCard from '../components/WorkspaceCard';
 import './Home.css';
 
 const CAROUSEL_SLIDES = [
