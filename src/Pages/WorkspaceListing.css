@@ -1,0 +1,442 @@
+/* WorkspaceListing Styles */
+
+/* ============================================
+   MAIN CONTAINER
+   ============================================ */
+
+.workspace-listing-container {
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  padding: 48px 0;
+}
+
+@media (max-width: 640px) {
+  .workspace-listing-container {
+    padding: 32px 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .workspace-listing-container {
+    padding: 60px 0;
+  }
+}
+
+.listing-wrapper {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .listing-wrapper {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .listing-wrapper {
+    padding: 0 32px;
+  }
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+
+.listing-header {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .listing-header {
+    text-align: left;
+  }
+}
+
+@media (max-width: 640px) {
+  .listing-header {
+    margin-bottom: 32px;
+  }
+}
+
+.listing-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .listing-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .listing-title {
+    font-size: 26px;
+  }
+}
+
+.listing-subtitle {
+  color: #64748b;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* ============================================
+   FILTER BAR
+   ============================================ */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+@media (max-width: 640px) {
+  .filter-bar {
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    gap: 8px;
+  }
+}
+
+.filter-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #a1aec8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 4px;
+  white-space: nowrap;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Filter Button Base */
+.filter-btn {
+  padding: 8px 24px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.filter-btn:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Active Filter Button */
+.filter-btn-active {
+  background-color: #4f46e5;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+}
+
+.filter-btn-active:hover {
+  background-color: #4338ca;
+  box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.2);
+}
+
+.filter-btn-active:active {
+  transform: scale(0.95);
+}
+
+/* Inactive Filter Button */
+.filter-btn-inactive {
+  background-color: white;
+  color: #475569;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.filter-btn-inactive:hover {
+  background-color: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.filter-btn-inactive:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 640px) {
+  .filter-btn {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+}
+
+/* ============================================
+   WORKSPACES GRID
+   ============================================ */
+
+.workspaces-listing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .workspaces-listing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .workspaces-listing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .workspaces-listing-grid {
+    gap: 16px;
+  }
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 80px 32px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .empty-state {
+    padding: 60px 20px;
+  }
+}
+
+.empty-state-text {
+  color: #a1aec8;
+  font-style: italic;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .empty-state-text {
+    font-size: 14px;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.listing-header {
+  animation: slideUp 0.6s ease-out;
+}
+
+.filter-bar {
+  animation: slideUp 0.6s ease-out 0.1s both;
+}
+
+.workspaces-listing-grid {
+  animation: fadeIn 0.4s ease-out 0.2s both;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .filter-bar {
+    display: none;
+  }
+
+  .workspace-listing-container {
+    background-color: white;
+  }
+
+  .workspaces-listing-grid {
+    gap: 20px;
+  }
+}
+
+/* ============================================
+   DARK MODE SUPPORT (OPTIONAL)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  .workspace-listing-container {
+    background-color: #0f172a;
+  }
+
+  .listing-title {
+    color: #f1f5f9;
+  }
+
+  .listing-subtitle {
+    color: #cbd5e1;
+  }
+
+  .filter-bar {
+    border-bottom-color: #334155;
+  }
+
+  .filter-btn-inactive {
+    background-color: #1e293b;
+    color: #cbd5e1;
+    border-color: #334155;
+  }
+
+  .filter-btn-inactive:hover {
+    background-color: #334155;
+    border-color: #475569;
+  }
+
+  .empty-state-text {
+    color: #94a3b8;
+  }
+}
+
+/* ============================================
+   RESPONSIVE FINE-TUNING
+   ============================================ */
+
+@media (max-width: 768px) {
+  .filter-bar {
+    margin-bottom: 32px;
+  }
+
+  .listing-header {
+    text-align: center;
+  }
+
+  .listing-title {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .listing-wrapper {
+    padding: 0 40px;
+  }
+
+  .workspaces-listing-grid {
+    gap: 40px;
+  }
+
+  .listing-header {
+    margin-bottom: 56px;
+  }
+
+  .filter-bar {
+    margin-bottom: 48px;
+  }
+}
+
+/* ============================================
+   HOVER & FOCUS STATES
+   ============================================ */
+
+.filter-btn {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.filter-btn:active {
+  box-shadow: none;
+}
+
+/* Ensure buttons are accessible on touch devices */
+@media (hover: none) {
+  .filter-btn-inactive:hover {
+    background-color: white;
+  }
+
+  .filter-btn-inactive:active {
+    background-color: #f8fafc;
+  }
+}
+
+/* ============================================
+   LOADING STATE (FOR FUTURE IMPLEMENTATION)
+   ============================================ */
+
+.loading-skeleton {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================
+   BROWSER-SPECIFIC FIXES
+   ============================================ */
+
+/* Fix for Safari */
+.filter-btn {
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fix for Firefox button reset */
+.filter-btn::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}

@@ -1,0 +1,224 @@
+/* WorkspaceCard Styles */
+
+.workspace-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.workspace-card:hover {
+  border-color: #a5d6ff;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Container */
+.workspace-image-container {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.workspace-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.workspace-card:hover .workspace-image {
+  transform: scale(1.05);
+}
+
+/* Badge */
+.workspace-badge-container {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+}
+
+.workspace-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  color: #4338ca;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  text-transform: capitalize;
+}
+
+/* Content Section */
+.workspace-content {
+  padding: 20px;
+}
+
+/* Header - Title and Price */
+.workspace-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.workspace-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  transition: color 0.3s ease;
+  flex: 1;
+  margin-right: 8px;
+}
+
+.workspace-card:hover .workspace-title {
+  color: #4f46e5;
+}
+
+.workspace-price {
+  color: #4f46e5;
+  font-weight: 700;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.workspace-price-unit {
+  color: #a1aec8;
+  font-size: 11px;
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+/* Location */
+.workspace-location {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.location-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+/* Amenities */
+.workspace-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.amenity-tag {
+  font-size: 10px;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* View Details Button */
+.view-details-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  color: #4f46e5;
+  font-weight: 600;
+  border: 1px solid #e0e7ff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.view-details-btn:hover {
+  background-color: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
+}
+
+.view-details-btn:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .workspace-content {
+    padding: 16px;
+  }
+
+  .workspace-image-container {
+    aspect-ratio: 16 / 10;
+  }
+
+  .workspace-title {
+    font-size: 16px;
+  }
+
+  .workspace-price {
+    font-size: 14px;
+  }
+
+  .workspace-location {
+    font-size: 13px;
+  }
+
+  .amenity-tag {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+
+  .view-details-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .workspace-card {
+    border-radius: 20px;
+  }
+
+  .workspace-image-container {
+    aspect-ratio: 16 / 9;
+  }
+
+  .workspace-content {
+    padding: 24px;
+  }
+
+  .workspace-title {
+    font-size: 20px;
+  }
+}
+
+/* Animation for smooth transitions */
+@keyframes cardHover {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-4px);
+  }
+}
+
+.workspace-card:hover {
+  animation: cardHover 0.3s ease forwards;
+}
